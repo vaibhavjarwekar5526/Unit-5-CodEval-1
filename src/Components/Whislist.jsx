@@ -11,8 +11,7 @@ const Whislist = () => {
 
     const addTodo = () => {
         const payload = {
-            todo: query,
-            status: false,
+            todo: query
         }
 
         let updatedTasks = [...tasks, payload]
@@ -33,12 +32,12 @@ const Whislist = () => {
         <input placeholder="Add Items" value={query} onChange={handleChange}/>
         <button onClick={addTodo}>ADD</button>
         {
-            tasks.map(({ todo, status }, idx) => (
-                <div key={ idx }>{todo}</div>
+            tasks.map(({todo}, idx) => (
+                <h3 key={ idx }>{todo}</h3>
             ))
         }
     </>
   )
 }
 
-export default Whislist
+export { Whislist }
